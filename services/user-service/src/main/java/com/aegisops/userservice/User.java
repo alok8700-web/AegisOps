@@ -5,7 +5,6 @@ import jakarta.validation.constraints.NotBlank;
 
 public record User(
         Long id,
-        @NotBlank String name,
-        @NotBlank @Email String email
-) {
+        @NotBlank(message = "name is required") String name,
+        @NotBlank(message = "email is required") @Email(message = "email must be valid") String email) {
 }
